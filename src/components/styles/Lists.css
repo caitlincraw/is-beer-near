@@ -1,0 +1,34 @@
+.lists-container{
+    display: flex; 
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.lists-title{
+    padding: 2rem;
+    font-size: 2rem;
+    font-weight: bolder;
+    align-self: center;
+}
+
+.lists-options {
+    display: flex;
+    align-self: center;
+}
+
+.lists-options .list-link {
+    margin: 0 0.5rem;
+    color: inherit;
+}
+
+.lists-options .list-link:hover {
+    color: #ce8b10;
+    text-decoration: none;
+}
+
+.list-title {
+    padding: 2rem;
+    font-size: 1.5rem;
+    font-weight: bolder;
+}

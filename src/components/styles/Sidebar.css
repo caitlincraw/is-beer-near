@@ -1,0 +1,43 @@
+.sidebar {
+    box-shadow: 5px 0px 10px #ececec;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    background: #F4F4F4;
+    height: 100vh;
+    max-width: 40rem;
+}
+
+.sidebar-title {
+    padding: 2rem;
+    font-size: 2rem;
+    font-weight: bolder;
+    text-align: center;
+}
+
+.sidebar nav {
+    margin-bottom: auto;
+    padding: 4rem 0;
+}
+
+.sidebar .nav-link {
+    font-weight: normal;
+    padding: 1rem 2rem;
+    color: black;
+}
+
+.sidebar .nav-link:hover {
+    background-color: #c0bebe;
+}
+
+.nav-item .nav-link.active {
+    background-color: #FFF;
+    color: #ce8b10;
+}
+
+.copyright {
+    text-align: center;
+    padding: 2rem;
+    margin-bottom: 0;
+}
+  
