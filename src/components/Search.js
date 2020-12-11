@@ -1,17 +1,23 @@
 import React from 'react';
 import './styles/Search.css';
-import {Link} from 'react-router-dom';
+import BeerCard from './BeerCard';
 
 const Search = () => {
     return (
         <div className="search-page">
             <div className="search-title">Search for Beers</div>
             <div className="search-options">
-                <Link exact to="/search/allbeers" className="search-link">All Beers</Link>
-                <Link exact to="/search/ipa" className="search-link">IPA</Link>
-                <Link exact to="/lists/stout" className="search-link">Stout</Link>
-                <Link exact to="/lists/lager" className="search-link">Lager</Link>
-                <Link exact to="/lists/pale" className="search-link">Pale Ale</Link>
+                <button className="search-btn">All Beers</button>
+                <button className="search-btn">IPA</button>
+                <button className="search-btn">Stout</button>
+                <button className="search-btn">Lager</button>
+                <button className="search-btn">Pale Ale</button>
+            </div>
+            <div className="cards-container">
+                <BeerCard />
+                <BeerCard />
+                <BeerCard />
+                <BeerCard />
             </div>
         </div>
     )

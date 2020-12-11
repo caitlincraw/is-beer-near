@@ -3,14 +3,25 @@
     display: flex;
     justify-content: space-between;
     flex-direction: column;
-    background: #F4F4F4;
+    background-color: #F4F4F4;
     height: 100vh;
     max-width: 40rem;
 }
 
+@media (max-width: 350px) {
+    .sidebar-title {
+        font-size: 1.25rem;
+    }
+}
+
+@media (min-width: 351px) {
+    .sidebar-title {
+        font-size: 2rem;
+    }
+}
+
 .sidebar-title {
     padding: 2rem;
-    font-size: 2rem;
     font-weight: bolder;
     text-align: center;
 }
@@ -24,6 +35,11 @@
     font-weight: normal;
     padding: 1rem 2rem;
     color: black;
+}
+
+.sidebar .nav-link .icon {
+    padding-right: 0.5rem;
+    font-size: 1.25rem;
 }
 
 .sidebar .nav-link:hover {

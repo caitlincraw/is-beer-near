@@ -17,12 +17,20 @@
     align-self: center;
 }
 
-.search-options .search-link {
+.search-options .search-btn {
     margin: 0 0.5rem;
     color: inherit;
+    background-color:rgba(255, 255, 255, 1);
+    border: none;
 }
 
-.search-options .search-link:hover {
+.search-options .search-btn:hover {
     color: #ce8b10;
     text-decoration: none;
+}
+
+.cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
 }
