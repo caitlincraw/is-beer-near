@@ -1,0 +1,1 @@
+export const BEERS_FROM_API = "BEERS_FROM_API";

@@ -20,7 +20,7 @@ module.exports = {
     BreweryId: 2
   }, {
     name: 'Upside Dawn',
-    type: 'Golden',
+    type: 'Blonde',
     labelPic: 'https://cdn.shopify.com/s/files/1/0015/2125/4469/products/Buy_UpsideDawn_GoldenAle_6Pack_1024x1024.png?v=1534944340',
     createdAt: new Date(),
     updatedAt: new Date(),
