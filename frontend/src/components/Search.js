@@ -3,6 +3,7 @@ import './styles/Search.css';
 import BeerCard from './BeerCard';
 
 const Search = () => {
+
     return (
         <div className="search-page">
             <div className="search-title">Search for Beers</div>
