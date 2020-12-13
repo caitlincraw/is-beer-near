@@ -19,7 +19,7 @@ const Search = (store) => {
                 <button className="search-btn">Pale Ale</button>
             </div>
             <div className="cards-container">
-                {store.beerStore.beers && store.beerStore.beers.map(beer => <BeerCard id={beer.id} name={beer.name} type={beer.type} info={beer.info} />)}
+                {store.beerStore.beers.map(beer => <BeerCard id={beer.id} name={beer.name} type={beer.type} info={beer.info} />)}
             </div>
         </div>
     )
