@@ -4,7 +4,12 @@ const db = require('../models');
 
 // get all beers from DB
 router.get('/getAll', async (req, res) => {
-    const beers = await db.Beer.findAll();
+    const beers = await db.Beer.findAll({
+        include: {
+            model: db.Brewery,
+            attributes:['name', 'website']
+        }
+    });
     res.json(beers);
 });
 

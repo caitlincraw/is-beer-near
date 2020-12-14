@@ -1,25 +1,40 @@
-import React, { useEffect } from 'react';
+import React, { useState } from 'react';
 import './styles/Search.css';
 import BeerCard from './BeerCard';
 import { connect } from 'react-redux';
 
 const Search = (store) => {
 
+    const [beerType, setBeerType] = useState("All Beers");
+
+    const handleClick = (e) => {
+        setBeerType(e.target.value);
+    }
+
+    const filterRender = () => {
+        if (beerType === "All Beers") {
+            return store.beerStore.beers.map(beer => <BeerCard key={beer.id} name={beer.name} type={beer.type} info={beer.info} breweryName={beer.Brewery.name} breweryURL={beer.Brewery.website} />);
+        } else {
+            const filteredBeers = store.beerStore.beers.filter(beer => beer.type === beerType);
+            return filteredBeers.map(beer => <BeerCard key={beer.id} name={beer.name} type={beer.type} info={beer.info} breweryName={beer.Brewery.name} breweryURL={beer.Brewery.website} />);
+        }
+    }
+
     return (
         <div className="search-page">
             <div className="search-title">Search for Beers</div>
             <div className="search-options">
-                <button className="search-btn">All Beers</button>
-                <button className="search-btn">IPA</button>
-                <button className="search-btn">Stout</button>
-                <button className="search-btn">Amber</button>
-                <button className="search-btn">Lager</button>
-                <button className="search-btn">Wheat</button>
-                <button className="search-btn">Blonde</button>
-                <button className="search-btn">Pale Ale</button>
+                <input type="button" className="search-btn" value="All Beers" onClick={handleClick} />
+                <input type="button" className="search-btn" value="IPA" onClick={handleClick}/>
+                <input type="button" className="search-btn" value="Stout" onClick={handleClick}/>
+                <input type="button" className="search-btn" value="Amber" onClick={handleClick}/>
+                <input type="button" className="search-btn" value="Lager" onClick={handleClick}/>
+                <input type="button" className="search-btn" value="Wheat" onClick={handleClick}/>
+                <input type="button" className="search-btn" value="Blonde" onClick={handleClick}/>
+                <input type="button" className="search-btn" value="Pale Ale" onClick={handleClick}/>
             </div>
             <div className="cards-container">
-                {store.beerStore.beers.map(beer => <BeerCard id={beer.id} name={beer.name} type={beer.type} info={beer.info} />)}
+                {filterRender()}            
             </div>
         </div>
     )
