@@ -12,14 +12,15 @@ const Search = (store) => {
     }
 
     const filterRender = () => {
-        if (!store.beerStore.beers.length) {
+        let beersInStore = store.beerStore.beers;
+        if (!beersInStore.length) {
             return "There are no beers available at this time... Sorry!";
         }
         else if (beerType === "All Beers") {
-            return store.beerStore.beers.map(beer => <BeerCard key={beer.id} name={beer.name} type={beer.type} info={beer.info} breweryName={beer.Brewery.name} breweryURL={beer.Brewery.website} />);
+            return beersInStore.map(beer => <BeerCard key={beer.id} name={beer.name} type={beer.type} image={beer.labelPic} info={beer.info} breweryName={beer.Brewery.name} breweryURL={beer.Brewery.website} />);
         } else {
-            const filteredBeers = store.beerStore.beers.filter(beer => beer.type === beerType);
-            return filteredBeers ? filteredBeers.map(beer => <BeerCard key={beer.id} name={beer.name} type={beer.type} info={beer.info} breweryName={beer.Brewery.name} breweryURL={beer.Brewery.website} />) : `There are no ${beerType} beers at the moment... Booooooooo.`;
+            const filteredBeers = beersInStore.filter(beer => beer.type === beerType);
+            return (filteredBeers.length > 0) ? filteredBeers.map(beer => <BeerCard key={beer.id} name={beer.name} type={beer.type} image={beer.labelPic} info={beer.info} breweryName={beer.Brewery.name} breweryURL={beer.Brewery.website} />) : `There are no ${beerType} beers at the moment... Booooooooo.`;
         }
     }
 

@@ -27,10 +27,12 @@
 .search-options .search-btn:hover {
     color: #ce8b10;
     text-decoration: none;
+    cursor: pointer;
 }
 
 .cards-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+    padding: 1rem 3rem;
 }

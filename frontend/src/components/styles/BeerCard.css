@@ -13,3 +13,21 @@
     color: #ce8b10;
     text-decoration: none;
 }
+
+.beer-label {
+    object-fit: contain;
+}
+
+.card-btns {
+    padding: 0 1rem;
+    text-decoration: none;
+    border: none;
+    background-color: rgba(255, 255, 255, 1);
+    font-size: 2rem;
+}
+
+.card-btns:hover {
+    cursor: pointer;
+    border-radius: 50%;
+    background-color: rgba(206, 139, 16, 0.75);
+}
