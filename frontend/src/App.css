@@ -3,4 +3,16 @@
   flex-direction: row;
 }
 
+header {
+  height: 100vh;
+  min-width: 10rem;
+}
+
+main {
+  height: 100vh;
+  overflow: scroll;
+  width: 90%;
+}
+
+
 

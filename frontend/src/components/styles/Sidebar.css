@@ -1,26 +1,15 @@
 .sidebar {
-    box-shadow: 5px 0px 10px #ececec;
+    box-shadow: .25rem 0 .75rem #ececec;
     display: flex;
     justify-content: space-between;
     flex-direction: column;
     background-color: #F4F4F4;
+    max-width: 20rem;
     height: 100%;
-    max-width: 30rem;
-}
-
-@media (max-width: 350px) {
-    .sidebar-title {
-        font-size: 1.25rem;
-    }
-}
-
-@media (min-width: 351px) {
-    .sidebar-title {
-        font-size: 2rem;
-    }
 }
 
 .sidebar-title {
+    font-size: 1.25rem;
     padding: 2rem;
     font-weight: bolder;
     text-align: center;
@@ -54,6 +43,7 @@
 .copyright {
     text-align: center;
     padding: 2rem;
+    font-size: 0.5rem;
     margin-bottom: 0;
 }
   

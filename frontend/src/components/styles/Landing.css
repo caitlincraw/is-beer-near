@@ -5,7 +5,11 @@
     justify-content: center;
 }
 
-blockquote {
+blockquote, .narrative {
     justify-self: center;
     align-self: center;
+}
+
+.narrative {
+    padding: 1rem;
 }
