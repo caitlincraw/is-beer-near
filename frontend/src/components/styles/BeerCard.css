@@ -28,6 +28,5 @@
 
 .card-btns:hover {
     cursor: pointer;
-    border-radius: 50%;
-    background-color: rgba(206, 139, 16, 0.75);
+    text-shadow: 3px 3px 6px #ce8b10;
 }

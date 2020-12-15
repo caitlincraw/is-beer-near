@@ -30,6 +30,11 @@
     cursor: pointer;
 }
 
+.search-btn:focus {
+    color: #ce8b10;
+    outline: 0;
+}
+
 .cards-container {
     display: flex;
     flex-wrap: wrap;
