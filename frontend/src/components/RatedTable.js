@@ -1,11 +1,12 @@
 import React from 'react';
+import RatedTableRow from './RatedTableRow';
 import './styles/RatedTable.css';
 
 const RatedTable = (props) => {
 
         return (
             <div className="table-container">
-                <div className="table-title">🍺 Favorite Beers 😄</div>
+                <div className="table-title">🍺 {props.rating} Beers 🍺</div>
                 <table className="table table-striped">
                     <thead>
                         <tr>
@@ -16,24 +17,16 @@ const RatedTable = (props) => {
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">2</th>
-                            <td>Jacob</td>
-                            <td>Thornton</td>
-                            <td>@fat</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">3</th>
-                            <td>Larry</td>
-                            <td>the Bird</td>
-                            <td>@twitter</td>
-                        </tr>
+                        {props.beerList.map(beer => (
+                            <RatedTableRow 
+                                key={beer.id}
+                                name={beer.name} 
+                                type={beer.type} 
+                                image={beer.labelPic} 
+                                breweryName={beer.Brewery.name} 
+                                breweryURL={beer.Brewery.website} 
+                            />
+                        ))}
                     </tbody>
                 </table>
             </div>

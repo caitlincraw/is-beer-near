@@ -1,0 +1,14 @@
+td a {
+    color: inherit;
+}
+
+td a:hover {
+    color: #ce8b10;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+td a:focus {
+    color: #ce8b10;
+    outline: 0;
+}

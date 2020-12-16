@@ -20,7 +20,7 @@ const Lists = (store) => {
         }
 
         const filteredBeers = beersInStore.filter(beer => beer.ratingList === ratingList);  
-        return <RatedTable />
+        return (filteredBeers.length > 0) ? <RatedTable beerList={filteredBeers} rating={ratingList} /> : <p className="no-beers"> You do not have any beers in your {ratingList} list. Add some brews to see your table!! </p>;
     }
 
     return (
