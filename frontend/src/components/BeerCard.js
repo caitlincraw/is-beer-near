@@ -11,9 +11,11 @@ const BeerCard = (props) => {
                     <h6 className="card-subtitle mb-2 text-muted">{props.type}</h6>
                     <a href={props.breweryURL} target="_blank" rel="noreferrer">{props.breweryName}</a>
                     <p className="card-text">{props.info}</p>
-                    <button className="card-btns">😄</button>
-                    <button className="card-btns">🤩</button>
-                    <button className="card-btns">🤮</button>
+                    <div className="card-btns">
+                        <button className="card-btn">😄</button>
+                        <button className="card-btn">🤩</button>
+                        <button className="card-btn">🤮</button>
+                    </div>
                 </div>
             </div>
 

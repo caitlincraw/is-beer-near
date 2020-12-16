@@ -19,6 +19,10 @@
 }
 
 .card-btns {
+    text-align: center;
+}
+
+.card-btn {
     padding: 0 1rem;
     text-decoration: none;
     border: none;
@@ -26,7 +30,11 @@
     font-size: 2rem;
 }
 
-.card-btns:hover {
+.card-btn:hover {
     cursor: pointer;
     text-shadow: 3px 3px 6px #ce8b10;
+}
+
+.card-btn:focus {
+    outline: 0;
 }

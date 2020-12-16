@@ -10,7 +10,7 @@ const Lists = () => {
         <div className="lists-container">
             <div className="lists-title">Matt's Lists</div>
             <div className="lists-options">
-                <Link to="/lists/favoritebeer" className="list-link active">Favorite Beers</Link>
+                <Link to="/lists/favoritebeer" className="list-link">Favorite Beers</Link>
                 <Link to="/lists/totrybeer" className="list-link">New Beers</Link>
                 <Link to="/lists/neverdrinkagainbeer" className="list-link">Nasty Beers</Link>
             </div>
