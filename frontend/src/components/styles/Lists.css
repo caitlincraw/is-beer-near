@@ -20,20 +20,17 @@
 .lists-options .list-link {
     margin: 0 0.5rem;
     color: inherit;
+    background-color:rgba(255, 255, 255, 1);
+    border: none;
 }
 
 .lists-options .list-link:hover {
     color: #ce8b10;
     text-decoration: none;
+    cursor: pointer;
 }
 
 .list-link:focus {
     color: #ce8b10;
     outline: 0;
-}
-
-.list-title {
-    padding: 2rem;
-    font-size: 1.5rem;
-    font-weight: bolder;
 }

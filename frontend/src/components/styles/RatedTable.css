@@ -1,0 +1,9 @@
+.table-title {
+    padding: 2rem 2rem 0 2rem;
+    font-size: 1.5rem;
+    font-weight: bolder;
+}
+
+table {
+    margin: 0 2rem;
+}

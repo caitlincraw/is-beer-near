@@ -16,12 +16,12 @@ router.get('/getAll', async (req, res) => {
 // update beer rating
 router.put('/rating/:id', async (req, res) => {
     // move this ENUM into the model so can reuse without redifining
-    const possibleRatings = {
-        FAVORITE: 'favorite',
-        NEEDTOTRY: 'needtotry',
-        NASTY: 'nasty',
-        NOTRATED: 'notrated'
-    }
+    const possibleRatings = [
+        "favorite",
+        "needtotry",
+        "nasty",
+        "notrated"
+    ]
     const rating = req.body.rating;
     const beerId = req.params.id;
 
@@ -31,7 +31,7 @@ router.put('/rating/:id', async (req, res) => {
         return res.status(400).send("There is no rating");
     } 
 
-    if (!(rating in possibleRatings)) {
+    if (!possibleRatings.includes(rating)) {
         console.log(`${rating} is not a possible rating`);
         return res.status(400).send("That is not a possible rating");
     }

@@ -1,34 +1,47 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './styles/Lists.css';
-import {Link, Switch, Route} from 'react-router-dom';
-import FavDrinkList from './FavDrinkList';
-import ToDrinkList from './ToDrinkList';
-import NeverDrinkList from './NeverDrinkList';
+import RatedTable from './RatedTable';
+import { connect } from 'react-redux';
 
-const Lists = () => {
+
+const Lists = (store) => {
+
+    const [ratingList, setRatingList] = useState("");
+
+    const handleClick = (rating) => {
+        setRatingList(rating);
+    }
+
+    const filterRender = () => {
+        let beersInStore = store.beerStore.beers;
+        
+        if (!beersInStore.length) {
+            return "There are no beers available at this time... Sorry!";
+        }
+
+        const filteredBeers = beersInStore.filter(beer => beer.ratingList === ratingList);  
+        return <RatedTable />
+    }
+
     return (
         <div className="lists-container">
             <div className="lists-title">Matt's Lists</div>
             <div className="lists-options">
-                <Link to="/lists/favoritebeer" className="list-link">Favorite Beers</Link>
-                <Link to="/lists/totrybeer" className="list-link">New Beers</Link>
-                <Link to="/lists/neverdrinkagainbeer" className="list-link">Nasty Beers</Link>
+                <input type="button" className="list-link" value="Favorite Beers" onClick={() => handleClick("favorite")} />
+                <input type="button" className="list-link" value="New Beers" onClick={() => handleClick("needtotry")}/>
+                <input type="button" className="list-link" value="Nasty Beers" onClick={() => handleClick("nasty")}/>
             </div>
             <div className="beer-list">
-                <Switch>
-                    <Route exact path="/lists/favoritebeer">
-                        <FavDrinkList />
-                    </Route>
-                    <Route exact path="/lists/totrybeer">
-                        <ToDrinkList />
-                    </Route>
-                    <Route exact path="/lists/neverdrinkagainbeer">
-                        <NeverDrinkList />
-                    </Route>
-                </Switch>
+                {filterRender()}
             </div>
         </div>
     )
 }
 
-export default Lists;
+const mapStateToProps = state => ({
+    beerStore: state.beers,
+})
+
+export default connect(mapStateToProps)(Lists);
+
+// export default Lists;

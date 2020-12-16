@@ -12,9 +12,9 @@ const BeerCard = (props) => {
                     <a href={props.breweryURL} target="_blank" rel="noreferrer">{props.breweryName}</a>
                     <p className="card-text">{props.info}</p>
                     <div className="card-btns">
-                        <button className="card-btn">😄</button>
-                        <button className="card-btn">🤩</button>
-                        <button className="card-btn">🤮</button>
+                        <button className="card-btn" value="favorite" onClick={props.onclick}>😄</button>
+                        <button className="card-btn" value="needtotry" onClick={props.onclick}>🤩</button>
+                        <button className="card-btn" value="nasty" onClick={props.onclick}>🤮</button>
                     </div>
                 </div>
             </div>
