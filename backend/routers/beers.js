@@ -13,6 +13,42 @@ router.get('/getAll', async (req, res) => {
     res.json(beers);
 });
 
+// update beer rating
+router.put('/rating/:id', async (req, res) => {
+    // move this ENUM into the model so can reuse without redifining
+    const possibleRatings = {
+        FAVORITE: 'favorite',
+        NEEDTOTRY: 'needtotry',
+        NASTY: 'nasty',
+        NOTRATED: 'notrated'
+    }
+    const rating = req.body.rating;
+    const beerId = req.params.id;
+
+    // get rid of console logs and replace with logging package (tracing level)
+    if (!rating) {
+        console.log(`no rating was sent`);
+        return res.status(400).send("There is no rating");
+    } 
+
+    if (!(rating in possibleRatings)) {
+        console.log(`${rating} is not a possible rating`);
+        return res.status(400).send("That is not a possible rating");
+    }
+
+    const beer = await db.Beer.findByPk(beerId);
+    
+    if (beer === null) {
+        console.log(`there is no beer with ${beerId}`);
+        return res.status(400).send("There is no beer with that ID");
+    }
+    
+    beer.ratingList = rating;
+    const ratedBeer = await beer.save().catch(err => console.error(err));
+        
+    return res.send(beer);
+})
+
 // get beers by type
 router.get('/getAll/:type', async (req, res) => {
     const beerType = req.params.type;
