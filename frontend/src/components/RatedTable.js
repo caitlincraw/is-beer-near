@@ -6,7 +6,7 @@ const RatedTable = (props) => {
 
         return (
             <div className="table-container">
-                <div className="table-title">🍺 {props.rating} Beers 🍺</div>
+                <div className="table-title">🍺 {props.rating} BEERS 🍺</div>
                 <table className="table table-striped">
                     <thead>
                         <tr>

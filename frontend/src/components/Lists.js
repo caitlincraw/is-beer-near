@@ -16,11 +16,11 @@ const Lists = (store) => {
         let beersInStore = store.beerStore.beers;
         
         if (!beersInStore.length) {
-            return "There are no beers available at this time... Sorry!";
+            return <p className="no-beers">There are no beers available at this time... Sorry!</p>;
         }
 
         const filteredBeers = beersInStore.filter(beer => beer.ratingList === ratingList);  
-        return (filteredBeers.length > 0) ? <RatedTable beerList={filteredBeers} rating={ratingList} /> : <p className="no-beers"> You do not have any beers in your {ratingList} list. Add some brews to see your table!! </p>;
+        return (filteredBeers.length > 0) ? <RatedTable beerList={filteredBeers} rating={ratingList.toUpperCase()} /> : <p className="no-beers"> You do not have any beers in your {ratingList} list. Add some brews to see your table!! </p>;
     }
 
     return (
