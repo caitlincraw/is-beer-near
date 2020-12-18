@@ -4,7 +4,6 @@ import RatedTable from './RatedTable';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
-
 const Lists = (store) => {
 
     const [ratingList, setRatingList] = useState("favorite");
@@ -44,5 +43,3 @@ const mapStateToProps = state => ({
 })
 
 export default connect(mapStateToProps)(Lists);
-
-// export default Lists;

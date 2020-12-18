@@ -1,5 +1,7 @@
 import React from 'react';
 import './styles/RatedTableRow.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faTrash } from '@fortawesome/free-solid-svg-icons'
 
 
 const RatedTableRow = (props) => {
@@ -9,6 +11,7 @@ const RatedTableRow = (props) => {
             <td>{props.name}</td>
             <td>{props.type}</td>
             <td><a href={props.breweryURL} target="_blank" rel="noreferrer">{props.breweryName}</a></td>
+            <td><button className="trash-btn" onClick={props.handleClick}><FontAwesomeIcon className="icon" icon={faTrash} /></button></td>
         </tr>
     )
 }

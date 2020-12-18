@@ -12,3 +12,21 @@ td a:focus {
     color: #ce8b10;
     outline: 0;
 }
+
+.trash-btn {
+    text-decoration: none;
+    border: none;
+    background: none;
+    opacity: 1;
+}
+
+.trash-btn:hover {
+    color: #ce8b10;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.trash-btn:focus {
+    color: #ce8b10;
+    outline: 0;
+}
