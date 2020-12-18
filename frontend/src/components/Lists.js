@@ -28,7 +28,7 @@ const Lists = (store) => {
             <div className="lists-title">Matt's Lists</div>
             <div className="lists-options">
                 <input type="button" className="list-link" value="Favorite Beers" onClick={() => handleClick("favorite")} />
-                <input type="button" className="list-link" value="New Beers" onClick={() => handleClick("needtotry")}/>
+                <input type="button" className="list-link" value="Need to Try Beers" onClick={() => handleClick("needtotry")}/>
                 <input type="button" className="list-link" value="Nasty Beers" onClick={() => handleClick("nasty")}/>
             </div>
             <div className="beer-list">
