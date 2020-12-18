@@ -41,3 +41,14 @@
     justify-content: space-around;
     padding: 1rem 3rem;
 }
+
+.error-nav-link {
+    color: inherit;
+    font-weight: bolder;
+}
+
+.error-nav-link:hover {
+    color: #ce8b10;
+    text-decoration: none;
+    cursor: pointer;
+}

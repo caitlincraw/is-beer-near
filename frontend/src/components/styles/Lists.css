@@ -39,12 +39,12 @@
     padding: 2rem;
 }
 
-.search-link {
+.error-nav-link {
     color: inherit;
     font-weight: bolder;
 }
 
-.search-link:hover {
+.error-nav-link:hover {
     color: #ce8b10;
     text-decoration: none;
     cursor: pointer;

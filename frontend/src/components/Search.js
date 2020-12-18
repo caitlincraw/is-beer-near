@@ -3,6 +3,7 @@ import './styles/Search.css';
 import BeerCard from './BeerCard';
 import { connect, useDispatch } from 'react-redux';
 import { updateBeer } from '../redux/actions';
+import { Link } from 'react-router-dom';
 
 const Search = (store) => {
 
@@ -26,7 +27,7 @@ const Search = (store) => {
     const filterRender = () => {
         let beersInStore = store.beerStore.beers;
         if (!beersInStore.length) {
-            return <p className="no-beers">There are no beers available at this time... Sorry!</p>;
+            return <p className="no-beers">I'm sorry but there are no beers available at this time... Go back to <Link to="/" className="error-nav-link">the home page</Link> and hope that beers will surface soon.</p>;
         }
         if (beerType === "All Beers") {
             return beersInStore.map(beer => (
