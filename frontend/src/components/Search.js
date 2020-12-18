@@ -7,7 +7,6 @@ import { updateBeer } from '../redux/actions';
 const Search = (store) => {
 
     const [beerType, setBeerType] = useState("All Beers");
-    const [beerId, setBeerId] = useState("");
     const dispatch = useDispatch();
 
     const handleClick = (e) => {
@@ -16,12 +15,8 @@ const Search = (store) => {
 
     const handleRatingClick = (id,e) => {
         const rating = e.target.value;
-        console.log(`id before dispatch ${id}`);
-        console.log(`rating before dispatch ${rating}`);
         // call action here with id and rating
         dispatch(updateBeer(id, rating));
-        console.log(`id after dispatch ${id}`)
-        console.log(`rating after dispatch ${rating}`)
         // alert(`You are trying to rate a beer`);
     }
 

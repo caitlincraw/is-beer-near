@@ -36,7 +36,12 @@ router.put('/rating/:id', async (req, res) => {
         return res.status(400).send("That is not a possible rating");
     }
 
-    const beer = await db.Beer.findByPk(beerId);
+    const beer = await db.Beer.findByPk(beerId, {
+        include: {
+            model: db.Brewery,
+            attributes:['name', 'website']
+        }
+    });
     
     if (beer === null) {
         console.log(`there is no beer with ${beerId}`);
