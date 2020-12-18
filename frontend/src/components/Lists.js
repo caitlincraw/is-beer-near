@@ -2,11 +2,12 @@ import React, {useState} from 'react';
 import './styles/Lists.css';
 import RatedTable from './RatedTable';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 
 const Lists = (store) => {
 
-    const [ratingList, setRatingList] = useState("");
+    const [ratingList, setRatingList] = useState("favorite");
 
     const handleClick = (rating) => {
         setRatingList(rating);
@@ -20,7 +21,7 @@ const Lists = (store) => {
         }
 
         const filteredBeers = beersInStore.filter(beer => beer.ratingList === ratingList);  
-        return (filteredBeers.length > 0) ? <RatedTable beerList={filteredBeers} rating={ratingList.toUpperCase()} /> : <p className="no-beers"> You do not have any beers in your {ratingList} list. Add some brews to see your table!! </p>;
+        return (filteredBeers.length > 0) ? <RatedTable beerList={filteredBeers} rating={ratingList.toUpperCase()} /> : <p className="no-beers"> You do not have any beers in your {ratingList} list. Go back to <Link to="/search" className="search-link">the search page</Link> to add some brews!! </p>;
     }
 
     return (

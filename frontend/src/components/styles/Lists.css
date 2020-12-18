@@ -38,3 +38,14 @@
 .no-beers {
     padding: 2rem;
 }
+
+.search-link {
+    color: inherit;
+    font-weight: bolder;
+}
+
+.search-link:hover {
+    color: #ce8b10;
+    text-decoration: none;
+    cursor: pointer;
+}

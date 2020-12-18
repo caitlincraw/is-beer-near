@@ -60,9 +60,9 @@ const Search = (store) => {
     const searchOptions = ["All Beers", "IPA", "Stout", "Amber", "Lager", "Wheat", "Blonde", "Pale Ale"]
     return (
         <div className="search-page">
-            <div className="search-title">Search for Beers</div>
+            <div className="search-title">Search for NA Beers</div>
             <div className="search-options">
-                {searchOptions.map(option => <input type="button" className="search-btn" value={option} onClick={handleClick} />)}
+                {searchOptions.map((option, index) => <input key={index} type="button" className="search-btn" value={option} onClick={handleClick} />)}
             </div>
             <div className="cards-container">
                 {filterRender()}            
