@@ -1,26 +1,28 @@
 import React, { useState } from 'react';
 import './styles/Search.css';
 import BeerCard from './BeerCard';
-import { connect } from 'react-redux';
+import { connect, useDispatch } from 'react-redux';
+import { updateBeer } from '../redux/actions';
 
 const Search = (store) => {
 
     const [beerType, setBeerType] = useState("All Beers");
     const [beerId, setBeerId] = useState("");
-    const [ratingList, setRatingList] = useState("");
-
+    const dispatch = useDispatch();
 
     const handleClick = (e) => {
         setBeerType(e.target.value);
     }
 
     const handleRatingClick = (id,e) => {
-        setBeerId(id);
-        setRatingList(e.target.value);
-
-        // call action here with beerId and ratingList
-
-        alert(`You are trying to rate a beer`);
+        const rating = e.target.value;
+        console.log(`id before dispatch ${id}`);
+        console.log(`rating before dispatch ${rating}`);
+        // call action here with id and rating
+        dispatch(updateBeer(id, rating));
+        console.log(`id after dispatch ${id}`)
+        console.log(`rating after dispatch ${rating}`)
+        // alert(`You are trying to rate a beer`);
     }
 
     const filterRender = () => {
