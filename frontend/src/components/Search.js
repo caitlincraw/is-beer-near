@@ -17,7 +17,7 @@ const Search = (store) => {
         const rating = e.target.value;
         // call action here with id and rating
         dispatch(updateBeer(id, rating));
-        // alert(`You are trying to rate a beer`);
+        alert(`Beer Added!`);
     }
 
     const filterRender = () => {
