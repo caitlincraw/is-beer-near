@@ -4,11 +4,6 @@ import beerApi from '../api/beers';
 export async function fetchBeers(dispatch, getState) {
     try {
         const response = await beerApi.get('/getAll');
-
-        if (!response) {
-            throw new Error('sorry, there was a server error')
-        };
-
         dispatch({ 
             type: BEERS_FROM_API_SUCCESS, 
             payload: response.data
@@ -26,11 +21,6 @@ export function updateBeer(beerId, beerRating) {
     return async function updateBeerThunk(dispatch, getState) { 
         try {
             const response = await beerApi.put(`/rating/${beerId}`, { rating: beerRating });
-            
-            if (!response) {
-                throw new Error('sorry, there was a server error')
-            };
-
             dispatch({ 
                 type: UPDATE_RATED_BEER_SUCCESS, 
                 payload: response.data
