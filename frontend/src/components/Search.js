@@ -15,26 +15,49 @@ const Search = (store) => {
 
     const handleRatingClick = (id,e) => {
         const rating = e.target.value;
-        // call action here with id and rating
+
+        // calls action with id and rating
         dispatch(updateBeer(id, rating));
+
+        // need to add something here that notifies user which list the beer was added to
         alert(`Beer Added!`);
     }
 
     const filterRender = () => {
         let beersInStore = store.beerStore.beers;
         if (!beersInStore.length) {
-            return "There are no beers available at this time... Sorry!";
+            return <p className="no-beers">There are no beers available at this time... Sorry!</p>;
         }
-        else if (beerType === "All Beers") {
-            return beersInStore.map(beer => <BeerCard key={beer.id} name={beer.name} type={beer.type} image={beer.labelPic} info={beer.info} breweryName={beer.Brewery.name} breweryURL={beer.Brewery.website} onclick={(e) => handleRatingClick(beer.id, e)} />);
-        } else {
-            const filteredBeers = beersInStore.filter(beer => beer.type === beerType);
-            return (filteredBeers.length > 0) ? filteredBeers.map(beer => <BeerCard key={beer.id} name={beer.name} type={beer.type} image={beer.labelPic} info={beer.info} breweryName={beer.Brewery.name} breweryURL={beer.Brewery.website} onclick={(e) => handleRatingClick(beer.id, e)} />) : `There are no ${beerType} beers at the moment... Booooooooo.`;
-        }
+        if (beerType === "All Beers") {
+            return beersInStore.map(beer => (
+                <BeerCard 
+                    key={beer.id} 
+                    name={beer.name} 
+                    type={beer.type} 
+                    image={beer.labelPic} 
+                    info={beer.info} 
+                    breweryName={beer.Brewery.name} 
+                    breweryURL={beer.Brewery.website} 
+                    onclick={(e) => handleRatingClick(beer.id, e)} 
+                />
+            ));
+        } 
+        const filteredBeers = beersInStore.filter(beer => beer.type === beerType);
+        return (filteredBeers.length > 0) ? filteredBeers.map(beer => (
+            <BeerCard 
+                key={beer.id} 
+                name={beer.name} 
+                type={beer.type} 
+                image={beer.labelPic} 
+                info={beer.info} 
+                breweryName={beer.Brewery.name} 
+                breweryURL={beer.Brewery.website} 
+                onclick={(e) => handleRatingClick(beer.id, e)} 
+            />
+        )) : <p className="no-beers">There are no {beerType} beers at the moment... Booooooooo.</p>;
     }
 
     const searchOptions = ["All Beers", "IPA", "Stout", "Amber", "Lager", "Wheat", "Blonde", "Pale Ale"]
-    
     return (
         <div className="search-page">
             <div className="search-title">Search for Beers</div>
