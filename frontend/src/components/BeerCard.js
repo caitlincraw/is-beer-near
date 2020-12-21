@@ -12,7 +12,8 @@ const BeerCard = (props) => {
                     <h6 className="card-subtitle mb-2 text-muted">{props.type}</h6>
                     <a href={props.breweryURL} target="_blank" rel="noreferrer">{props.breweryName}</a>
                     <p className="card-text">{props.info}</p>
-                    <div className="card-btns">
+                </div>
+                    <div className="card-btns card-footer">
                         <button className="card-btn" value="favorite" onClick={props.onclick} data-tip data-for="favTip">
                             🤩                            
                         </button>
@@ -32,7 +33,6 @@ const BeerCard = (props) => {
                                 Add to your nasty list!
                         </ReactTooltip>
                     </div>
-                </div>
             </div>
 
         )

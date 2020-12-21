@@ -1,6 +1,9 @@
 .card {
     border: 2px solid black;
     margin: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .card a {
@@ -19,14 +22,20 @@
 }
 
 .card-btns {
+    width: 100%;
+    margin: 0;
+    padding: 0;
     text-align: center;
+    box-shadow: 0 -0.25rem 1rem #ececec;
+    background-color: #F4F4F4;
+    border: none;
 }
 
 .card-btn {
     padding: 0 1rem;
     text-decoration: none;
     border: none;
-    background-color: rgba(255, 255, 255, 1);
+    background-color: Transparent;
     font-size: 2rem;
 }
 
