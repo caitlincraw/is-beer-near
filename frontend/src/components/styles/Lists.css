@@ -49,3 +49,7 @@
     text-decoration: none;
     cursor: pointer;
 }
+
+.beer-list {
+    align-self: center;
+}
