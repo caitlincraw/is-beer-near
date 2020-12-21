@@ -4,6 +4,9 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    box-shadow: 0.75rem 0.75rem 1rem #ececec;
+    box-shadow: -0.75rem -0.75rem 1rem #ececec;
+
 }
 
 .card a {
