@@ -4,8 +4,8 @@
     font-weight: bolder;
 }
 
-table {
-    table-layout: fixed;
-    width: 100%; 
+.table, table {
     box-shadow: 0.25rem 0.25rem 1rem #ececec;
+    table-layout: fixed;
+    overflow: scroll;
 }
