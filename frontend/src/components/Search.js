@@ -58,7 +58,7 @@ const Search = (store) => {
         )) : <p className="no-beers">There are no {beerType} beers at the moment... Booooooooo.</p>;
     }
 
-    const searchOptions = ["All Beers", "IPA", "Stout", "Amber", "Lager", "Wheat", "Blonde", "Pale Ale"]
+    const searchOptions = ["All Beers", "IPA", "Stout", "Amber", "Lager", "Wheat", "Pale Ale"]
     return (
         <div className="search-page">
             <div className="search-title">Search for NA Beers</div>
