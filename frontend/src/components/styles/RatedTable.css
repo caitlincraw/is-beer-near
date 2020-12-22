@@ -3,3 +3,9 @@
     font-size: 1.5rem;
     font-weight: bolder;
 }
+
+table {
+    table-layout: fixed;
+    width: 100%; 
+    box-shadow: 0.25rem 0.25rem 1rem #ececec;
+}

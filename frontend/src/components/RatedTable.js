@@ -19,7 +19,7 @@ const RatedTable = (props) => {
         return (
             <div className="table-container">
                 <div className="table-title text-center">🍺 {props.rating} BEERS 🍺</div>
-                <div className="table-responsive-lg">
+                <div className="table-responsive">
                     <table className="table table-striped">
                         <thead>
                             <tr>
