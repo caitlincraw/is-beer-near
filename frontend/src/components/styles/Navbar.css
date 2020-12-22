@@ -1,0 +1,20 @@
+.navbar {
+    box-shadow: -0.25rem 0 .75rem #ececec;
+    display: flex;
+    justify-content: space-between;
+    background-color: #F4F4F4;
+    width: 100%;
+    max-height: 10vh;
+}
+
+.nav-item .nav-link:hover{
+    background-color: #c0bebe;
+}
+
+.nav-item .nav-link:focus {
+    background-color: #FFF;
+}
+
+.nav-link .icon:hover {
+    color: #ce8b10; 
+}

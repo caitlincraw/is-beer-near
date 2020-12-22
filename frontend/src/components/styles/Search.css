@@ -39,7 +39,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    padding: 1rem 3rem;
+    padding: 2rem 0;
 }
 
 .error-nav-link {

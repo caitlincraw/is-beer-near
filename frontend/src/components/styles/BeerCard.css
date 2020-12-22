@@ -1,12 +1,11 @@
 .card {
     border: 2px solid black;
-    margin: 0.5rem;
+    margin: 1rem;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     box-shadow: 0.75rem 0.75rem 1rem #ececec;
     box-shadow: -0.75rem -0.75rem 1rem #ececec;
-
 }
 
 .card a {
@@ -29,7 +28,7 @@
     margin: 0;
     padding: 0;
     text-align: center;
-    box-shadow: 0 -0.25rem 1rem #ececec;
+    box-shadow: 0 -0.5rem 1rem -0.25rem #ececec;
     background-color: #F4F4F4;
     border: none;
 }
